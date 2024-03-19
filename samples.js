@@ -32,3 +32,32 @@ function getSegmentData(index, yLevel) {
 }
 
 // You will need to make similar changes in the drawPartialSegment function
+
+
+// Draw the current segment partially for both curves
+function drawPartialSegment(index, t) {
+  // First curve partial segment data
+  let segment1 = getSegmentData(index, height / 6); // Use the top third for the first curve
+  drawInterpolatedBezier(segment1, t);
+  
+  // Second curve partial segment data (use the middle third)
+  let segment2 = getSegmentData(index, height / 2); // This curve will be in the middle third
+  drawInterpolatedBezier(segment2, t);
+}
+
+// This function handles the interpolated drawing for a segment
+function drawInterpolatedBezier(segment, t) {
+  // Lerp the x and y values for the control points and the end point based on t
+  let cp1x_interp = lerp(segment.x0, segment.cp1x, t);
+  let cp1y_interp = lerp(segment.y0, segment.cp1y, t);
+  let cp2x_interp = lerp(segment.x0, segment.cp2x, t);
+  let cp2y_interp = lerp(segment.y0, segment.cp2y, t);
+  let x1_interp = lerp(segment.x0, segment.x1, t);
+  let y1_interp = lerp(segment.y0, segment.y1, t);
+
+  strokeWeight(segment.coverageWeight);
+  stroke(segment.hue, 80, 80, segment.coverage); // Color based on low frequency, opacity on coverage
+  bezier(segment.x0, segment.y0, cp1x_interp, cp1y_interp, cp2x_interp, cp2y_interp, x1_interp, y1_interp);
+}
+
+// The getSegmentData function remains the same as in the previous example
