@@ -139,6 +139,6 @@ function getColor(confidence) {
     case 0:
       return color(255, 0, 0); // red
     default:
-      return color(255); // white
+      return color(0); // white
   }
 }
