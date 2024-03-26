@@ -39,7 +39,7 @@ let data = [];
   let segmentIndex = 0; // Current segment index
   
   function draw() {
-    background(255); // Clear the background
+    background(225); // Clear the background
   
     // Draw each segment up to the current one fully
     for (let i = 0; i < segmentIndex; i++) {
@@ -49,7 +49,7 @@ let data = [];
     // Draw the current segment partially, according to t
     if (segmentIndex < data.length - 1) {
       drawPartialSegment(segmentIndex, t);
-      t += 0.16; // Adjust this value for speed
+      t += 6; // Adjust this value for speed
       if (t > 1) {
         t = 0; // Reset t for the next segment
         segmentIndex++; // Move to the next segment

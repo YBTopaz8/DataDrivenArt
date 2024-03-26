@@ -26,13 +26,13 @@
   "dateTime" : "03/11/23 05:00:42",
   "value" : {
     "bpm" : 62,
-    "confidence" : 3
+    "confidence" : 2
   }
 },{
   "dateTime" : "03/11/23 05:00:52",
   "value" : {
     "bpm" : 63,
-    "confidence" : 3
+    "confidence" : 2
   }
 },{
   "dateTime" : "03/11/23 05:01:07",
@@ -62,7 +62,7 @@
   "dateTime" : "03/11/23 05:01:52",
   "value" : {
     "bpm" : 64,
-    "confidence" : 3
+    "confidence" : 2
   }
 },{
   "dateTime" : "03/11/23 05:01:57",
